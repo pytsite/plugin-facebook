@@ -9,7 +9,7 @@ __license__ = 'MIT'
 
 
 def _init():
-    from pytsite import lang, assetman, content_export, router, tpl, comments, events, permissions, settings
+    from pytsite import lang, assetman, router, tpl, comments, events, permissions, settings
     from . import _eh, _settings_form, _content_export, _comments
 
     # Resources
@@ -24,7 +24,11 @@ def _init():
     router.add_rule('/facebook/authorize', 'facebook@authorize', __name__ + '@authorize')
 
     # Content export driver
-    content_export.register_driver(_content_export.Driver())
+    try:
+        from plugins import content_export
+        content_export.register_driver(_content_export.Driver())
+    except ImportError as e:
+        raise RuntimeError("Required plugin is not found: {}".format(e))
 
     # Comments driver
     comments.register_driver(_comments.Driver())

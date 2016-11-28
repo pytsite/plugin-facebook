@@ -1,1 +1,6 @@
-{}
+{
+  "requires": {
+    "packages": ["twython", "requests_oauthlib"],
+    "plugins": ["content_export"]
+  }
+}
