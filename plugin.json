@@ -1,6 +1,23 @@
 {
+  "name": "Facebook",
+  "description": {
+    "en": "Facebook",
+    "ru": "Facebook",
+    "uk": "Facebook"
+  },
+  "url": "https://github.com/pytsite/plugin-facebook",
+  "author": {
+    "name": "Alexander Shepetko",
+    "email": "a@shepetko.com",
+    "url": "https://shepetko.com"
+  },
   "requires": {
-    "packages": ["twython", "requests_oauthlib"],
-    "plugins": ["content_export"]
+    "packages": [
+      "twython",
+      "requests_oauthlib"
+    ],
+    "plugins": [
+      "content_export"
+    ]
   }
 }
