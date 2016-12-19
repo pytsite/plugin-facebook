@@ -1,9 +1,8 @@
 {
-  "name": "Facebook",
   "description": {
-    "en": "Facebook",
-    "ru": "Facebook",
-    "uk": "Facebook"
+    "en": "Facebook support",
+    "ru": "Поддержка Facebook",
+    "uk": "Підримка Facebook"
   },
   "url": "https://github.com/pytsite/plugin-facebook",
   "author": {
