@@ -1,8 +1,8 @@
 {
   "description": {
-    "en": "Facebook support",
-    "ru": "Поддержка Facebook",
-    "uk": "Підримка Facebook"
+    "en": "Facebook",
+    "ru": "Facebook",
+    "uk": "Facebook"
   },
   "url": "https://github.com/pytsite/plugin-facebook",
   "author": {
@@ -12,7 +12,6 @@
   },
   "requires": {
     "packages": [
-      "twython",
       "requests_oauthlib"
     ],
     "plugins": [
