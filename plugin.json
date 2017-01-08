@@ -1,8 +1,8 @@
 {
   "description": {
-    "en": "Facebook",
-    "ru": "Facebook",
-    "uk": "Facebook"
+    "en": "Facebook API",
+    "ru": "Facebook API",
+    "uk": "Facebook API"
   },
   "url": "https://github.com/pytsite/plugin-facebook",
   "author": {
@@ -14,8 +14,6 @@
     "packages": [
       "requests_oauthlib"
     ],
-    "plugins": [
-      "content_export"
-    ]
+    "plugins": []
   }
 }

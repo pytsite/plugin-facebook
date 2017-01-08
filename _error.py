@@ -5,6 +5,14 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 
+class AppIdNotSet(Exception):
+    pass
+
+
+class AppSecretNotSet(Exception):
+    pass
+
+
 class AuthSessionError(Exception):
     pass
 

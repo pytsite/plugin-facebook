@@ -2,8 +2,8 @@
 """
 from collections import Generator as _Generator
 import requests as _requests
-from pytsite import router as _router, util as _util, settings as _settings
-from . import _error
+from pytsite import router as _router, util as _util
+from . import _api, _error
 
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
@@ -17,16 +17,11 @@ class AuthSession:
     """Authorization Session.
     """
 
-    def __init__(self, state: str = None, redirect_uri: str = None):
+    def __init__(self, state: str = None, redirect_uri: str = None, app_id: str = None, app_secret: str = None):
         """Init.
         """
-        self._app_id = _settings.get('facebook.app_id')
-        if not self._app_id:
-            raise RuntimeError("Settings parameter 'facebook.app_id' is not defined.")
-
-        self._app_secret = _settings.get('facebook.app_secret')
-        if not self._app_secret:
-            raise RuntimeError("Settings parameter 'facebook.app_secret' is not defined.")
+        self._app_id = app_id or _api.get_app_id()
+        self._app_secret = app_secret or _api.get_app_secret()
 
         if state:
             self._state = state
@@ -71,21 +66,15 @@ class Session:
     """Facebook Session.
     """
 
-    def __init__(self, access_token: str):
+    def __init__(self, access_token: str, app_id: str = None, app_secret: str = None):
         """Init.
         """
-        self._app_id = _settings.get('facebook.app_id')
-        if not self._app_id:
-            raise RuntimeError("Settings parameter 'facebook.app_id' is not defined.")
-
-        self._app_secret = _settings.get('facebook.app_secret')
-        if not self._app_secret:
-            raise RuntimeError("Settings parameter 'facebook.app_secret' is not defined.")
-
         self._access_token = access_token
+        self._app_id = app_id or _api.get_app_id()
+        self._app_secret = app_secret or _api.get_app_secret()
 
         if not self._access_token:
-            raise _error.SessionError('access_token is empty.')
+            raise _error.SessionError('Access token cannot be empty')
 
     def request(self, endpoint, method='GET', **kwargs) -> dict:
         """Perform request.
