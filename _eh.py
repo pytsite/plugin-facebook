@@ -21,6 +21,6 @@ def router_dispatch():
         if has_perm:
             _router.session().get_warning_message(msg)
 
-    except _error:
+    except (_error.AppIdNotSet, _error.AppSecretNotSet):
         if has_perm:
             _router.session().add_warning_message(msg)

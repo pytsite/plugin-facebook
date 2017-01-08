@@ -2,6 +2,9 @@
 
 ## Changelog
 
+### 0.3.1 (2017-01-08)
+Fixed erroneous exception handling.
+
 ### 0.3 (2017-01-08)
 Content export and comments moved to separate plugins.
 
