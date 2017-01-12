@@ -1,7 +1,11 @@
-# PytSite Facebook Plugin
+# PytSite Facebook API Plugin
 
 
 ## Changelog
+
+
+### 0.3.3 (2017-01-12)
+Fixed unhandled exception on settings form.
 
 
 ### 0.3.2 (2017-01-12)
