@@ -99,7 +99,7 @@ class Auth(_widget.Abstract):
             a.append(_html.Img(src=_assetman.url('facebook@img/facebook-login-button.png')))
 
         container = _widget.Container(self.uid)
-        container.add_widget(_widget.static.Text(
+        container.append_child(_widget.static.Text(
             self.uid + '[auth_url]',
             weight=10,
             label=_lang.t('facebook@user'), title=a.render()
@@ -107,7 +107,7 @@ class Auth(_widget.Abstract):
 
         # Page select
         if self.pages:
-            container.add_widget(_widget.select.Select(
+            container.append_child(_widget.select.Select(
                 self.uid + '[page_id]',
                 weight=20,
                 value=self._page_id,
@@ -116,10 +116,10 @@ class Auth(_widget.Abstract):
                 h_size='col-sm-6'
             ))
 
-        container.add_widget(_widget.input.Hidden(self.uid + '[access_token]', value=self.access_token))
-        container.add_widget(_widget.input.Hidden(self.uid + '[access_token_type]', value=self.access_token_type))
-        container.add_widget(_widget.input.Hidden(self.uid + '[access_token_expires]', value=self.access_token_expires))
-        container.add_widget(_widget.input.Hidden(self.uid + '[user_id]', value=self.user_id))
-        container.add_widget(_widget.input.Hidden(self.uid + '[screen_name]', value=self.screen_name))
+        container.append_child(_widget.input.Hidden(self.uid + '[access_token]', value=self.access_token))
+        container.append_child(_widget.input.Hidden(self.uid + '[access_token_type]', value=self.access_token_type))
+        container.append_child(_widget.input.Hidden(self.uid + '[access_token_expires]', value=self.access_token_expires))
+        container.append_child(_widget.input.Hidden(self.uid + '[user_id]', value=self.user_id))
+        container.append_child(_widget.input.Hidden(self.uid + '[screen_name]', value=self.screen_name))
 
         return self._group_wrap(container.get_html_em())
