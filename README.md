@@ -4,6 +4,10 @@
 ## Changelog
 
 
+### 0.3.4 (2017-01-21)
+Support latest PytSite `widget`'s changes.
+
+
 ### 0.3.3 (2017-01-12)
 Fixed unhandled exception on settings form.
 

@@ -61,7 +61,7 @@ class Auth(_widget.Abstract):
     def screen_name(self) -> str:
         return self._screen_name
 
-    def get_html_em(self, **kwargs) -> _html.Element:
+    def _get_element(self, **kwargs) -> _html.Element:
         """Get HTML element representation of the widget.
         :param **kwargs:
         """
@@ -122,4 +122,4 @@ class Auth(_widget.Abstract):
         container.append_child(_widget.input.Hidden(self.uid + '[user_id]', value=self.user_id))
         container.append_child(_widget.input.Hidden(self.uid + '[screen_name]', value=self.screen_name))
 
-        return self._group_wrap(container.get_html_em())
+        return container.get_element()
