@@ -4,6 +4,10 @@
 ## Changelog
 
 
+### 0.3.5 (2017-02-23)
+Route name updated.
+
+
 ### 0.3.4 (2017-01-21)
 Support latest PytSite `widget`'s changes.
 
