@@ -4,6 +4,10 @@
 ## Changelog
 
 
+### 0.3.7 (2017-03-21)
+Support fore latest PytSite `widget`'s changes.
+
+
 ### 0.3.6 (2017-03-03)
 Support for latest PytSite router's API function rename.
 
@@ -13,7 +17,7 @@ Route name updated.
 
 
 ### 0.3.4 (2017-01-21)
-Support latest PytSite `widget`'s changes.
+Support fore latest PytSite `widget`'s changes.
 
 
 ### 0.3.3 (2017-01-12)

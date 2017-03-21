@@ -93,7 +93,7 @@ class Auth(_widget.Abstract):
         # Link to user profile or to facebook authorization URL
         if self._user_id and self._screen_name:
             a = _html.A(self._screen_name, href='https://facebook.com/' + self._user_id, target='_blank')
-            a.append(_html.I(cls='fa fa-facebook-square'))
+            a.append(_html.I(css='fa fa-facebook-square'))
         else:
             a = _html.A(href=_AuthSession(redirect_uri=self._redirect_url).get_authorization_url(self._scope))
             a.append(_html.Img(src=_assetman.url('facebook@img/facebook-login-button.png')))
