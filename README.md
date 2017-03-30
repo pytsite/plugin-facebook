@@ -3,6 +3,9 @@
 
 ## Changelog
 
+### 0.3.8 (2017-03-30)
+Fixed notifications. 
+
 
 ### 0.3.7 (2017-03-21)
 Support fore latest PytSite `widget`'s changes.

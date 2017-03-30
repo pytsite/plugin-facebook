@@ -10,7 +10,7 @@ __license__ = 'MIT'
 
 
 def _init():
-    from pytsite import lang, assetman, router, events, permissions, settings
+    from pytsite import lang, assetman, permissions, settings, router
     from . import _eh, _settings_form
 
     # Resources
@@ -30,7 +30,7 @@ def _init():
     settings.define('facebook', _settings_form.Form, 'facebook@facebook', 'fa fa-facebook', 'facebook.settings.manage')
 
     # Event handlers
-    events.listen('pytsite.router.dispatch', _eh.router_dispatch)
+    router.on_dispatch(_eh.router_dispatch)
 
 
 _init()
