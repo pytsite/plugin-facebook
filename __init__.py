@@ -15,7 +15,9 @@ def _init():
 
     # Resources
     lang.register_package(__name__, alias='facebook')
+
     assetman.register_package(__name__, alias='facebook')
+    assetman.t_copy_static(__name__ + '@**')
 
     # Lang globals
     lang.register_global('facebook_admin_settings_url', lambda language, args: settings.form_url('facebook'))

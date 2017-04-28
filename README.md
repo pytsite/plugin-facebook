@@ -3,6 +3,11 @@
 
 ## Changelog
 
+
+### 0.3.9 (2017-04-28)
+Support for latest PytSite asset management changes.
+
+
 ### 0.3.8 (2017-03-30)
 Fixed notifications. 
 
