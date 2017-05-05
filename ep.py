@@ -8,9 +8,11 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 
-def authorize(args: dict, inp: dict):
+def authorize():
     """Authorization.
     """
+    inp = _router.request().inp
+
     # Check for errors
     error = inp.get('error_description')
     if error:
