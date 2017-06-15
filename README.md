@@ -4,6 +4,10 @@
 ## Changelog
 
 
+### 0.3.11 (2017-06-15)
+Updated to support latest PytSite version 0.99.39.
+
+
 ### 0.3.10 (2017-05-05)
 Updated controllers' signatures.
 

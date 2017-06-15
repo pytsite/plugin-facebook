@@ -11,7 +11,7 @@ __license__ = 'MIT'
 
 def _init():
     from pytsite import lang, assetman, permissions, settings, router
-    from . import _eh, _settings_form
+    from . import _eh, _settings_form, _controllers
 
     # Resources
     lang.register_package(__name__, alias='facebook')
@@ -23,7 +23,7 @@ def _init():
     lang.register_global('facebook_admin_settings_url', lambda language, args: settings.form_url('facebook'))
 
     # Routes
-    router.handle('/facebook/authorize', 'plugins.facebook@authorize', 'facebook@authorize')
+    router.handle(_controllers.Authorize(), '/facebook/authorize', 'facebook@authorize')
 
     # Permissions
     permissions.define_permission('facebook.settings.manage', 'facebook@manage_facebook_settings', 'app')
