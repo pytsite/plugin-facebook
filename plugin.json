@@ -1,4 +1,6 @@
 {
+  "name": "plugins.facebook",
+  "version": "0.3.12",
   "description": {
     "en": "Facebook API",
     "ru": "Facebook API",
