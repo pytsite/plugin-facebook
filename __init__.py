@@ -10,13 +10,14 @@ __license__ = 'MIT'
 
 
 def _init():
-    from pytsite import lang, assetman, permissions, settings, router
+    from pytsite import lang, router
+    from plugins import permissions, settings, assetman
     from . import _eh, _settings_form, _controllers
 
     # Resources
-    lang.register_package(__name__, alias='facebook')
+    lang.register_package(__name__)
 
-    assetman.register_package(__name__, alias='facebook')
+    assetman.register_package(__name__)
     assetman.t_copy_static(__name__ + '@**')
 
     # Lang globals

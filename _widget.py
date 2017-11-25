@@ -1,7 +1,8 @@
 """PytSite Facebook Widgets.
 """
 from datetime import datetime as _datetime
-from pytsite import widget as _widget, html as _html, router as _router, assetman as _assetman, lang as _lang
+from pytsite import html as _html, router as _router, lang as _lang
+from plugins import widget as _widget, assetman as _assetman
 from ._session import AuthSession as _AuthSession, Session as _Session
 from . import _api
 

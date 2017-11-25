@@ -1,6 +1,7 @@
 """PytSite Facebook Plugin Event Handlers.
 """
-from pytsite import metatag as _metatag, auth as _auth, lang as _lang, router as _router
+from pytsite import metatag as _metatag, lang as _lang, router as _router
+from plugins import auth as _auth
 from . import _api, _error
 
 __author__ = 'Alexander Shepetko'

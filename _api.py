@@ -1,6 +1,7 @@
 """PytSite Facebook Plugin API Functions.
 """
-from pytsite import reg as _reg, settings as _settings
+from pytsite import reg as _reg
+from plugins import settings as _settings
 from . import _error
 
 __author__ = 'Alexander Shepetko'
