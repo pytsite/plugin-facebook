@@ -24,7 +24,7 @@ def _init():
     lang.register_global('facebook_admin_settings_url', lambda language, args: settings.form_url('facebook'))
 
     # Routes
-    router.handle(_controllers.Authorize(), '/facebook/authorize', 'facebook@authorize')
+    router.handle(_controllers.Authorize, '/facebook/authorize', 'facebook@authorize')
 
     # Permissions
     permissions.define_permission('facebook.settings.manage', 'facebook@manage_facebook_settings', 'app')
