@@ -1,6 +1,6 @@
 {
   "name": "facebook",
-  "version": "1.2",
+  "version": "1.2.1",
   "description": {
     "en": "Facebook API",
     "ru": "Facebook API",
@@ -19,8 +19,9 @@
     "plugins": [
       "auth",
       "assetman",
-      "settings",
+      "font_awesome",
       "permissions",
+      "settings",
       "widget"
     ]
   }
