@@ -1,14 +1,14 @@
 """PytSite Facebook Widgets.
 """
+__author__ = 'Alexander Shepetko'
+__email__ = 'a@shepetko.com'
+__license__ = 'MIT'
+
 from datetime import datetime as _datetime
 from pytsite import html as _html, router as _router, lang as _lang
 from plugins import widget as _widget, assetman as _assetman
 from ._session import AuthSession as _AuthSession, Session as _Session
 from . import _api
-
-__author__ = 'Alexander Shepetko'
-__email__ = 'a@shepetko.com'
-__license__ = 'MIT'
 
 
 class Auth(_widget.Abstract):
@@ -119,7 +119,8 @@ class Auth(_widget.Abstract):
 
         container.append_child(_widget.input.Hidden(self.uid + '[access_token]', value=self.access_token))
         container.append_child(_widget.input.Hidden(self.uid + '[access_token_type]', value=self.access_token_type))
-        container.append_child(_widget.input.Hidden(self.uid + '[access_token_expires]', value=self.access_token_expires))
+        container.append_child(
+            _widget.input.Hidden(self.uid + '[access_token_expires]', value=self.access_token_expires))
         container.append_child(_widget.input.Hidden(self.uid + '[user_id]', value=self.user_id))
         container.append_child(_widget.input.Hidden(self.uid + '[screen_name]', value=self.screen_name))
 

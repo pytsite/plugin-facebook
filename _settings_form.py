@@ -1,12 +1,12 @@
 """PytSite Facebook Plugin Settings Form.
 """
-from pytsite import lang as _lang, validation as _validation
-from plugins import widget as _widget, settings as _settings
-from . import _api, _error
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from pytsite import lang as _lang, validation as _validation
+from plugins import widget as _widget, settings as _settings
+from . import _api, _error
 
 
 class Form(_settings.Form):

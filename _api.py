@@ -1,11 +1,11 @@
 """PytSite Facebook Plugin API Functions.
 """
-from pytsite import reg as _reg
-from . import _error
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from pytsite import reg as _reg
+from . import _error
 
 
 def get_app_id() -> str:

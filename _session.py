@@ -1,13 +1,13 @@
 """PytSite Facebook Sessions.
 """
+__author__ = 'Alexander Shepetko'
+__email__ = 'a@shepetko.com'
+__license__ = 'MIT'
+
 from collections import Generator as _Generator
 import requests as _requests
 from pytsite import router as _router, util as _util
 from . import _api, _error
-
-__author__ = 'Alexander Shepetko'
-__email__ = 'a@shepetko.com'
-__license__ = 'MIT'
 
 _API_REQUEST_URL = 'https://graph.facebook.com/v2.5/'
 _states = {}

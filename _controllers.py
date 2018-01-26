@@ -1,11 +1,11 @@
 """PytSite Facebook Plugin Endpoints.
 """
-from pytsite import router as _router, routing as _routing
-from ._session import AuthSession as _AuthSession
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from pytsite import router as _router, routing as _routing
+from ._session import AuthSession as _AuthSession
 
 
 class Authorize(_routing.Controller):

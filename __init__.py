@@ -4,40 +4,31 @@ __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
-from pytsite import plugman as _plugman
-
-if _plugman.is_installed(__name__):
-    # Public API
-    from ._api import get_app_id, get_app_secret
-    from . import _error as error, _session as session, _widget as widget
-
-
-def _register_assetman_resources():
-    from plugins import assetman
-
-    if not assetman.is_package_registered(__name__):
-        assetman.register_package(__name__)
-        assetman.t_copy_static(__name__)
-
-    return assetman
-
-
-def plugin_install():
-    _register_assetman_resources().build(__name__)
+# Public API
+from ._api import get_app_id, get_app_secret
+from . import _error as error, _session as session, _widget as widget
 
 
 def plugin_load():
     from pytsite import lang
+    from plugins import assetman
     from . import _eh, _settings_form, _controllers
 
     # Resources
     lang.register_package(__name__)
-    _register_assetman_resources()
+    assetman.register_package(__name__)
+    assetman.t_copy_static(__name__)
+
+
+def plugin_install():
+    from plugins import assetman
+
+    assetman.build(__name__)
 
 
 def plugin_load_uwsgi():
     from pytsite import lang, router
-    from plugins import permissions, settings
+    from plugins import settings
     from . import _eh, _settings_form, _controllers
 
     # Lang globals
@@ -46,11 +37,8 @@ def plugin_load_uwsgi():
     # Routes
     router.handle(_controllers.Authorize, '/facebook/authorize', 'facebook@authorize')
 
-    # Permissions
-    permissions.define_permission('facebook@manage_settings', 'facebook@manage_facebook_settings', 'app')
-
     # Settings
-    settings.define('facebook', _settings_form.Form, 'facebook@facebook', 'fa fa-facebook', 'facebook@manage_settings')
+    settings.define('facebook', _settings_form.Form, 'facebook@facebook', 'fa fa-facebook', 'dev')
 
     # Event handlers
     router.on_dispatch(_eh.router_dispatch)
