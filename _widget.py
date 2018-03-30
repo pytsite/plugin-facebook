@@ -62,7 +62,7 @@ class Auth(_widget.Abstract):
     def screen_name(self) -> str:
         return self._screen_name
 
-    def _get_element(self, **kwargs) -> _html.Element:
+    def _get_element(self, **kwargs) -> _widget.Container:
         """Get HTML element representation of the widget.
         :param **kwargs:
         """
@@ -99,8 +99,8 @@ class Auth(_widget.Abstract):
             a = _html.A(href=_AuthSession(redirect_uri=self._redirect_url).get_authorization_url(self._scope))
             a.append(_html.Img(src=_assetman.url('facebook@img/facebook-login-button.png')))
 
-        container = _widget.Container(self.uid)
-        container.append_child(_widget.static.Text(
+        cont = _widget.Container(self.uid)
+        cont.append_child(_widget.static.Text(
             self.uid + '[auth_url]',
             weight=10,
             label=_lang.t('facebook@user'), title=a.render()
@@ -108,7 +108,7 @@ class Auth(_widget.Abstract):
 
         # Page select
         if self.pages:
-            container.append_child(_widget.select.Select(
+            cont.append_child(_widget.select.Select(
                 self.uid + '[page_id]',
                 weight=20,
                 value=self._page_id,
@@ -117,11 +117,11 @@ class Auth(_widget.Abstract):
                 h_size='col-sm-6'
             ))
 
-        container.append_child(_widget.input.Hidden(self.uid + '[access_token]', value=self.access_token))
-        container.append_child(_widget.input.Hidden(self.uid + '[access_token_type]', value=self.access_token_type))
-        container.append_child(
+        cont.append_child(_widget.input.Hidden(self.uid + '[access_token]', value=self.access_token))
+        cont.append_child(_widget.input.Hidden(self.uid + '[access_token_type]', value=self.access_token_type))
+        cont.append_child(
             _widget.input.Hidden(self.uid + '[access_token_expires]', value=self.access_token_expires))
-        container.append_child(_widget.input.Hidden(self.uid + '[user_id]', value=self.user_id))
-        container.append_child(_widget.input.Hidden(self.uid + '[screen_name]', value=self.screen_name))
+        cont.append_child(_widget.input.Hidden(self.uid + '[user_id]', value=self.user_id))
+        cont.append_child(_widget.input.Hidden(self.uid + '[screen_name]', value=self.screen_name))
 
-        return container.get_element()
+        return cont
