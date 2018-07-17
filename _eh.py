@@ -15,5 +15,5 @@ def router_dispatch():
     try:
         _metatag.t_set('fb:app_id', _api.get_app_id())
     except (_error.AppIdNotSet, _error.AppSecretNotSet):
-        if _auth.get_current_user().has_permission('facebook.settings.manage'):
+        if _auth.get_current_user().is_dev:
             _router.session().add_warning_message(_lang.t('facebook@plugin_setup_required_warning'))

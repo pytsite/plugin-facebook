@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.4.1 (2018-07-17)
+
+Permissions issue fixed.
+
+
 ### 1.4 (2018-03-30)
 
 Support for `widget-1.8`.
