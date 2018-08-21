@@ -102,7 +102,7 @@ class Auth(_widget.Abstract):
         cont = _html.TagLessElement()
         cont.append(_widget.static.Text(
             self.uid + '[auth_url]',
-            label=_lang.t('facebook@user'), title=a.render()
+            label=_lang.t('facebook@user'), text=a.render()
         ).renderable())
 
         # Page select
